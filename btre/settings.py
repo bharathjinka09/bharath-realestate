@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
+from django.contrib.messages import constants as messages
 import os
 import django_heroku
 
@@ -62,7 +63,7 @@ MIDDLEWARE_CLASSES = (
     # Simplified static file serving.
     # https://warehouse.python.org/project/whitenoise/
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    )
+)
 
 ROOT_URLCONF = 'btre.urls'
 
@@ -149,16 +150,11 @@ STATICFILES_DIRS = [
 
 # Media Folder Settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-<<<<<<< HEAD
 MEDIA_URL = '/media/'
 
 # Messages
-from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
-    messages.ERROR:'danger',
+    messages.ERROR: 'danger',
 }
-=======
-MEDIA_URL = 'media/'
 django_heroku.settings(locals())
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
->>>>>>> 73b0f42c6018ed0595c9e9a9cf5e8ecab63bf9b1

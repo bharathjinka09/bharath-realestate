@@ -19,7 +19,7 @@ img {
   position: relative;
   min-height: 650px;
   color: #fff;
-  padding-top: 6rem; }
+  padding-top: 2rem !important; }
   #showcase .home-search {
     min-height: 400px;
     position: relative;

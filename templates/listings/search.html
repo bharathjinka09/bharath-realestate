@@ -29,11 +29,8 @@
                             <select name="state" class="form-control">
                                 <option selected="true" disabled="disabled">State (All)</option>
                                 {% for key,value in state_choices.items %}
-                                <option value="{{ key }}" 
-                                {% if key == values.state %} 
-                                    selected
-                                {% endif %}
-                                >{{ value }}</option>
+                                <option value="{{ key }}" {% if key == values.state %} selected {% endif %}>{{ value }}
+                                </option>
                                 {% endfor %}
                             </select>
                         </div>
@@ -45,11 +42,8 @@
                             <select name="bedrooms" class="form-control">
                                 <option selected="true" disabled="disabled">Bedrooms (Any)</option>
                                 {% for key,value in bedroom_choices.items %}
-                                <option value="{{ key }}"
-                                {% if key == values.bedrooms %} 
-                                    selected
-                                {% endif %}
-                                >{{ value }}</option>
+                                <option value="{{ key }}" {% if key == values.bedrooms %} selected {% endif %}>
+                                    {{ value }}</option>
                                 {% endfor %}
                             </select>
                         </div>
@@ -57,11 +51,8 @@
                             <select name="price" class="form-control">
                                 <option selected="true" disabled="disabled">Max Price (All)</option>
                                 {% for key,value in price_choices.items %}
-                                <option value="{{ key }}"
-                                {% if key == values.price %} 
-                                    selected
-                                {% endif %}
-                                >{{ value }}</option>
+                                <option value="{{ key }}" {% if key == values.price %} selected {% endif %}>{{ value }}
+                                </option>
                                 {% endfor %}
                             </select>
                         </div>
@@ -99,7 +90,8 @@
             {% for listing in listings %}
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card listing-preview">
-                    <img class="card-img-top" src="{{ listing.photo_main.url }}" alt="">
+                    <img class="card-img-top"
+                        src="https://bharathblog.000webhostapp.com/wp-content/uploads/2020/01/home-1.jpg" alt="">
                     <div class="card-img-overlay">
                         <h2>
                             <span class="badge badge-secondary text-white">₹{{ listing.price | intcomma }}</span>
